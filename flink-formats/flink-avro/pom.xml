@@ -29,11 +29,17 @@ under the License.
 		<relativePath>..</relativePath>
 	</parent>
 
+	<version>1.6.4.axonivy.1-SNAPSHOT</version>
 	<artifactId>flink-avro</artifactId>
 	<name>flink-avro</name>
 
 	<packaging>jar</packaging>
 
+	<properties>
+		<avro.version>1.8.2.axonivy.2</avro.version>
+		<flink.version>1.6.4</flink.version>
+	</properties>
+	
 	<dependencies>
 
 		<!-- core dependencies -->
@@ -41,14 +47,14 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-core</artifactId>
-			<version>${project.version}</version>
+			<version>${flink.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.avro</groupId>
 			<artifactId>avro</artifactId>
-			<!-- managed version -->
+			<version>${avro.version}</version>
 		</dependency>
 
 		<dependency>
@@ -66,7 +72,7 @@ under the License.
 			<groupId>org.apache.flink</groupId>
 			<!-- use a dedicated Scala version to not depend on it -->
 			<artifactId>flink-table_2.11</artifactId>
-			<version>${project.version}</version>
+			<version>${flink.version}</version>
 			<scope>provided</scope>
 			<!-- Projects depending on this project, won't depend on flink-table. -->
 			<optional>true</optional>
@@ -77,7 +83,7 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-table_2.11</artifactId>
-			<version>${project.version}</version>
+			<version>${flink.version}</version>
 			<scope>test</scope>
 			<type>test-jar</type>
 		</dependency>
@@ -88,21 +94,28 @@ under the License.
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-streaming-scala_2.11</artifactId>
-			<version>${project.version}</version>
+			<version>${flink.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-test-utils_2.11</artifactId>
-			<version>${project.version}</version>
+			<version>${flink.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-test-utils-junit</artifactId>
+			<version>${flink.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-core</artifactId>
-			<version>${project.version}</version>
+			<version>${flink.version}</version>
 			<scope>test</scope>
 			<type>test-jar</type>
 		</dependency>

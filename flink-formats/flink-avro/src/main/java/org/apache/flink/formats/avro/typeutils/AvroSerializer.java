@@ -362,7 +362,7 @@ public class AvroSerializer<T> extends TypeSerializer<T> {
 		final ClassLoader cl = Thread.currentThread().getContextClassLoader();
 
 		if (SpecificRecord.class.isAssignableFrom(type)) {
-			SpecificData specificData = new SpecificData(cl);
+			SpecificData specificData = SpecificData.getForClass(type);
 			this.avroData = specificData;
 			this.schema = specificData.getSchema(type);
 			this.reader = new SpecificDatumReader<>(schema, schema, specificData);
