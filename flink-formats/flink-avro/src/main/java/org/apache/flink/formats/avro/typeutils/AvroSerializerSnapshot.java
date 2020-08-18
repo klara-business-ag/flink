@@ -185,7 +185,7 @@ public class AvroSerializerSnapshot<T> implements TypeSerializerSnapshot<T> {
 			return null;
 		}
 		if (isSpecificRecord(runtimeType)) {
-			SpecificData d = new SpecificData(cl);
+			SpecificData d = SpecificData.getForClass(runtimeType);
 			return AvroFactory.extractAvroSpecificSchema(runtimeType, d);
 		}
 		ReflectData d = new ReflectData(cl);

@@ -97,7 +97,7 @@ public final class AvroFactory<T> {
 
 	@SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 	private static <T> AvroFactory<T> fromSpecific(Class<T> type, ClassLoader cl, Optional<Schema> previousSchema) {
-		SpecificData specificData = new SpecificData(cl);
+		SpecificData specificData = SpecificData.getForClass(type);
 		Schema newSchema = extractAvroSpecificSchema(type, specificData);
 
 		return new AvroFactory<>(
