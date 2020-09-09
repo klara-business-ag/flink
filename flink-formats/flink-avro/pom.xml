@@ -30,7 +30,7 @@ under the License.
 	</parent>
 
     <artifactId>flink-avro</artifactId>
-    <version>1.11.1.axonivy.1-SNAPSHOT</version>
+    <version>1.11.1.axonivy.1</version>
 	<name>flink-avro</name>
 
 	<packaging>jar</packaging>
